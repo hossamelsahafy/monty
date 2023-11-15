@@ -4,8 +4,16 @@
 #include <string.h>
 
 #define MAX_CMD_LEN 256
-
-void execute_command(char *cmd, stack_t **stack, unsigned int line_number)
+/**
+ * execute_command - function to execute command
+ *
+ * @cmd: parameter that point to char
+ *
+ * @stack: parameter that point to stack_t
+ *
+ * @l_number: parameter to identify unsigned int
+*/
+void execute_command(char *cmd, stack_t **stack, unsigned int l_number)
 {
     int num;
     char *token;
@@ -15,15 +23,15 @@ void execute_command(char *cmd, stack_t **stack, unsigned int line_number)
     {
         token = strtok(NULL, " \n");
         num = atoi(token);
-        push(stack, line_number, num);
+        push(stack, l_number, num);
     }
     else if (strcmp(token, "pop") == 0)
     {
-        pop(stack, line_number);
+        pop(stack, l_number);
     }
     else if (strcmp(token, "pall") == 0)
     {
-        pall(stack, line_number);
+        pall(stack, l_number);
     }
     else
     {
