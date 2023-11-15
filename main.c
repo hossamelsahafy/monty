@@ -1,16 +1,32 @@
 #include "monty.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-int main(void)
+#define MAX_CMD_LEN 256
+int main(int arc, char *arv[])
 {
+    FILE *file;
     stack_t *stack = NULL;
+    char cmd[MAX_CMD_LEN];
+    unsigned int line_number = 0;
 
-    push(&stack, 0, 1);
-    push(&stack, 0, 2);
-    push(&stack, 0, 3);
-    pall(&stack, 0);
-
-    free_stack(&stack);
-    return (EXIT_SUCCESS);
+    if (arc != 2)
+    {
+        fprintf(stderr, "USAGE: %s filename\n", arv[0]);
+        return 1;
+    }
+    file = fopen(arv[1], "r");
+    if (file == NULL)
+    {
+        fprintf(stderr, "Error opening file.\n");
+        return 1;
+    }
+    while (fgets(cmd, MAX_CMD_LEN, file) != NULL)
+    {
+        line_number++;
+        execute_command(cmd, &stack, line_number);
+    }
+    fclose(file);
+    return 0;
 }
