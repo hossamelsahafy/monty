@@ -2,9 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
+ * pall - function that print value of elements
+ *
  * @stack: parameter that point to linked list
  *
- * @l_number: parameter to identify unsigned int 
+ * @l_number: parameter to identify unsigned int
 */
 void pall(stack_t **stack, unsigned int l_number)
 {
