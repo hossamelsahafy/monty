@@ -4,6 +4,13 @@
 #include <string.h>
 
 #define MAX_CMD_LEN 256
+/**
+ * main - entry function
+ *
+ * @arc: parameter to identify int
+ *
+ * @arv: parameter point to char
+*/
 int main(int arc, char *arv[])
 {
     FILE *file;
