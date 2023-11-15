@@ -10,7 +10,6 @@
  *
  * @n: parameter to identify int
 */
-
 void push(stack_t **stack, unsigned int l_number, int n)
 {
     stack_t *new;
