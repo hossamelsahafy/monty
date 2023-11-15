@@ -17,7 +17,7 @@ void push(stack_t **stack, unsigned int l_number, int n)
 
 	(void)l_number;
 	new = malloc(sizeof(stack_t));
-	if (new == NUL)
+	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
