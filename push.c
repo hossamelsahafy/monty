@@ -1,6 +1,7 @@
 #include "monty.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
  * push - function that add element to the top of the stack
  *
@@ -12,21 +13,21 @@
 */
 void push(stack_t **stack, unsigned int l_number, int n)
 {
-    stack_t *new;
+	stack_t *new;
 
-    (void)l_number;
-    new = malloc(sizeof(stack_t));
-    if (new == NULL)
-    {
-        fprintf(stderr, "Error: malloc failed\n");
-        exit(EXIT_FAILURE);
-    }
-    new->n = n;
-    new->prev = NULL;
-    new->next = *stack;
-    if (*stack != NULL)
-    {
-        (*stack)->prev = new;
-    }
-    *stack = new;
+	(void)l_number;
+	new = malloc(sizeof(stack_t));
+	if (new == NUL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+	new->n = n;
+	new->prev = NULL;
+	new->next = *stack;
+	if (*stack != NULL)
+	{
+		(*stack)->prev = new;
+	}
+	*stack = new;
 }
