@@ -34,7 +34,7 @@ int main(int arc, char *arv[])
 	}
 	while (fgets(cmd, MAX_CMD_LEN, file) != NULL)
 	{
-		line_number++;
+		l_number++;
 		execute_command(cmd, &stack, l_number);
 	}
 	fclose(file);
