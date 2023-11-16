@@ -7,6 +7,8 @@
  * @stack: parameter that point to linked list
  *
  * @l_number: parameter to identify unsigned int
+ *
+ * @n: parameter to identify n
 */
 void pall(stack_t **stack, unsigned int l_number, int n)
 {
@@ -20,4 +22,5 @@ void pall(stack_t **stack, unsigned int l_number, int n)
 		printf("%d\n", c->n);
 		c = c->next;
 	}
+
 }

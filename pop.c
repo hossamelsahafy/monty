@@ -8,6 +8,7 @@
  *
  * @l_number: parameter to identify unsigned int
 */
+
 void pop(stack_t **stack, unsigned int l_number)
 {
 	stack_t *tmp;

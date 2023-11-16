@@ -41,6 +41,7 @@ void pop(stack_t **stack, unsigned int l_number);
 
 void f_stack(stack_t **stack);
 
-void handle_opcode(instruction_t *op, stack_t **stack, unsigned int l_number, int n);
+void handle_opcode(instruction_t *op, stack_t **stack,
+unsigned int l_number, int n);
 
 #endif
