@@ -18,7 +18,7 @@ void _mod(stack_t **stack, unsigned int l_number, int n)
 	(void)n;
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't div, stack too short\n", l_number);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", l_number);
 		exit(EXIT_FAILURE);
 	}
     if ((*stack)->n == 0)
