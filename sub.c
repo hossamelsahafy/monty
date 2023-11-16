@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * sup - function to subtract the top element from the second top element
+ * sub - function to subtract the top element from the second top element
  *
  * @stack: parameter that point to linked list
  *
