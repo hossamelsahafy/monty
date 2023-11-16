@@ -22,27 +22,27 @@ int main(int arc, char *arv[])
 	stack_t *stack = NULL;
 	char cmd[M_CMD_L];
 	unsigned int l_number = 0;
-    instruction_t op;
+	instruction_t op;
 	int n;
 
 	if (arc != 2)
-    {
-        fprintf(stderr, "USAGE: %s filename\n", arv[0]);
-        f_stack(&stack);
-        return (1);
-    }
-    file = fopen(arv[1], "r");
-    if (file == NULL)
-    {
-        fprintf(stderr, "Error opening file.\n");
-        f_stack(&stack);
-        return (1);
-    }
+	{
+		fprintf(stderr, "USAGE: %s filename\n", arv[0]);
+		f_stack(&stack);
+		return (1);
+	}
+	file = fopen(arv[1], "r");
+	if (file == NULL)
+	{
+		fprintf(stderr, "Error opening file.\n");
+		f_stack(&stack);
+		return (1);
+	}
 	while (fgets(cmd, M_CMD_L, file) != NULL)
 	{
 		l_number++;
 		op.opcode = strtok(cmd, " \n");
-		if (op.opcode == NULL || op.opcode[0] == '\0' || op.opcode[0] == '#')  /* If the line is empty, only contains white spaces, or is a comment */
+		if (op.opcode == NULL || op.opcode[0] == '\0' || op.opcode[0] == '#')
 		{
 			continue;
 		}
