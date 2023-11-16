@@ -11,6 +11,7 @@
  *
  * @n: parameter to identify int
 */
+
 void push(stack_t **stack, unsigned int l_number, int n)
 {
 	stack_t *new;
@@ -20,6 +21,7 @@ void push(stack_t **stack, unsigned int l_number, int n)
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
+		free(stack);
 		exit(EXIT_FAILURE);
 	}
 	new->n = n;
