@@ -58,4 +58,6 @@ void add(stack_t **stack, unsigned int l_number, int n);
 
 void sub(stack_t **stack, unsigned int l_number, int n);
 
+void _div(stack_t **stack, unsigned int l_number, int n);
+
 #endif
