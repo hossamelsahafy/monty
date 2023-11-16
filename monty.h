@@ -2,6 +2,8 @@
 
 #define MONTY_H
 
+#define M_CMD_L 256
+#include <stdio.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -43,5 +45,7 @@ void f_stack(stack_t **stack);
 
 void handle_opcode(instruction_t *op, stack_t **stack,
 unsigned int l_number, int n);
+
+void pro_file(FILE *file, stack_t **stack);
 
 #endif
