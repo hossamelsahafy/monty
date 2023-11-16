@@ -13,9 +13,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 /**
  * struct instruction_s - opcode and its function
@@ -27,16 +27,20 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number, int n);
 } instruction_t;
+
+extern char *global_arg;
+
 void push(stack_t **stack, unsigned int l_number, int n);
 
-void pall(stack_t **stack, unsigned int l_number);
+void pall(stack_t **stack, unsigned int l_number, int n);
 
 void pop(stack_t **stack, unsigned int l_number);
 
-void free_stack(stack_t **stack, unsigned int l_number);
+void f_stack(stack_t **stack);
 
-void execute_command(char *cmd, stack_t **stack, unsigned int line_number); 
+void handle_opcode(instruction_t *op, stack_t **stack, unsigned int l_number, int n);
+
 #endif
