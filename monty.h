@@ -60,4 +60,6 @@ void sub(stack_t **stack, unsigned int l_number, int n);
 
 void _div(stack_t **stack, unsigned int l_number, int n);
 
+void _mul(stack_t **stack, unsigned int l_number, int n);
+
 #endif
