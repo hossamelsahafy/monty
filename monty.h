@@ -39,7 +39,7 @@ void push(stack_t **stack, unsigned int l_number, int n);
 
 void pall(stack_t **stack, unsigned int l_number, int n);
 
-void pop(stack_t **stack, unsigned int l_number);
+void pop(stack_t **stack, unsigned int l_number, int n);
 
 void f_stack(stack_t **stack);
 

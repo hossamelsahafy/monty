@@ -9,10 +9,11 @@
  * @l_number: parameter to identify unsigned int
 */
 
-void pop(stack_t **stack, unsigned int l_number)
+void pop(stack_t **stack, unsigned int l_number, int n)
 {
 	stack_t *tmp;
 
+	(void)n;
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", l_number);
