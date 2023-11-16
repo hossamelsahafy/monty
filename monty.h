@@ -51,4 +51,7 @@ void pro_file(FILE *file, stack_t **stack);
 void pint(stack_t **stack, unsigned int l_number, int n);
 
 void nop(stack_t **stack, unsigned int l_number, int n);
+
+void swap(stack_t **stack, unsigned int l_number, int n);
+
 #endif
