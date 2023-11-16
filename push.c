@@ -20,7 +20,7 @@ void push(stack_t **stack, unsigned int l_number, int n)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed\n");
+		fprintf(stderr, "L%d: usage: push integer");
 		free(stack);
 		exit(EXIT_FAILURE);
 	}
