@@ -1,16 +1,21 @@
 #include "monty.h"
 #include <stddef.h>
+#include <stdlib.h>
 /**
  * f_stack - function to free nodes
  *
  * @stack: parameter point to linked list
  *
- * @l_number: parameter to identify unsigned int  
+ * @l_number: parameter to identify unsigned int
 */
-void free_stack(stack_t **stack, unsigned int l_number)
+void f_stack(stack_t **stack)
 {
-    while(*stack != NULL)
+    stack_t *temp;
+
+    while (*stack != NULL)
     {
-        pop(stack, l_number);
+        temp = (*stack)->next;
+        free(*stack);
+        *stack = temp;
     }
 }
