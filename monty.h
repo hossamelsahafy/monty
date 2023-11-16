@@ -62,4 +62,6 @@ void _div(stack_t **stack, unsigned int l_number, int n);
 
 void _mul(stack_t **stack, unsigned int l_number, int n);
 
+void _mod(stack_t **stack, unsigned int l_number, int n);
+
 #endif
