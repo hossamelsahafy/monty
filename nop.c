@@ -14,7 +14,7 @@
 */
 void nop(stack_t **stack, unsigned int l_number, int n)
 {
-    (void)stack;
-    (void)l_number;
-    (void)n;
+	(void)stack;
+	(void)l_number;
+	(void)n;
 }
