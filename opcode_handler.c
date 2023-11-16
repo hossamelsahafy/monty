@@ -25,7 +25,7 @@ void handle_opcode(instruction_t *op, stack_t **stack,
 	instruction_t ops[] = {
 		{"push", push},
 		{"pall", pall},
-        {"pop", pop},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 	opcode = strtok(op->opcode, " \n");
