@@ -10,7 +10,7 @@
  *
  * @n: parameter to identify int
 */
-void add(stack_t **stack, unsigned int l_number, int n)
+void sub(stack_t **stack, unsigned int l_number, int n)
 {
 	stack_t *tmp;
 
@@ -20,7 +20,7 @@ void add(stack_t **stack, unsigned int l_number, int n)
 		fprintf(stderr, "L%d: can't add, stack too short\n", l_number);
 		exit(EXIT_FAILURE);
 	}
-	(*stack)->next->n = (*stack)->next->n + (*stack)->n;
+	(*stack)->next->n = (*stack)->next->n - (*stack)->n;
 	tmp = *stack;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;

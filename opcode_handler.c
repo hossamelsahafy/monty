@@ -30,6 +30,7 @@ void handle_opcode(instruction_t *op, stack_t **stack,
 		{"nop", nop},
 		{"swap", swap},
 		{"add", add},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 	opcode = strtok(op->opcode, " \n");
