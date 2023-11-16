@@ -8,11 +8,12 @@
  *
  * @l_number: parameter to identify unsigned int
 */
-void pall(stack_t **stack, unsigned int l_number)
+void pall(stack_t **stack, unsigned int l_number, int n)
 {
 	stack_t *c;
 
 	(void)l_number;
+	(void)n;
 	c = *stack;
 	while (c != NULL)
 	{
@@ -20,4 +21,3 @@ void pall(stack_t **stack, unsigned int l_number)
 		c = c->next;
 	}
 }
-
