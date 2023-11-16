@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_CMD_LEN 256
+#define M_CMD_L 256
+
 /**
  * main - entry function
  *
@@ -14,30 +15,52 @@
  * Return: if arc != 2 return 1
  * otherwise 0
 */
+
 int main(int arc, char *arv[])
 {
 	FILE *file;
 	stack_t *stack = NULL;
-	char cmd[MAX_CMD_LEN];
+	char cmd[M_CMD_L];
 	unsigned int l_number = 0;
+    instruction_t op;
+	int n;
 
 	if (arc != 2)
-	{
-		fprintf(stderr, "USAGE: %s filename\n", arv[0]);
-		return (1);
-	}
-	file = fopen(arv[1], "r");
-	if (file == NULL)
-	{
-		fprintf(stderr, "Error opening file.\n");
-		return (1);
-	}
-	while (fgets(cmd, MAX_CMD_LEN, file) != NULL)
+    {
+        fprintf(stderr, "USAGE: %s filename\n", arv[0]);
+        f_stack(&stack);
+        return (1);
+    }
+    file = fopen(arv[1], "r");
+    if (file == NULL)
+    {
+        fprintf(stderr, "Error opening file.\n");
+        f_stack(&stack);
+        return (1);
+    }
+	while (fgets(cmd, M_CMD_L, file) != NULL)
 	{
 		l_number++;
-		execute_command(cmd, &stack, l_number);
+		op.opcode = strtok(cmd, " \n");
+		if (op.opcode == NULL || op.opcode[0] == '\0' || op.opcode[0] == '#')  /* If the line is empty, only contains white spaces, or is a comment */
+		{
+			continue;
+		}
+		if (strcmp(op.opcode, "push") == 0)
+		{
+			char *arg = strtok(NULL, " \n");
+			if (arg == NULL)
+			{
+				fprintf(stderr, "L%d: usage: push integer\n", l_number);
+				fclose(file);
+				f_stack(&stack);
+				exit(EXIT_FAILURE);
+			}
+			n = atoi(arg);
+		}
+		handle_opcode(&op, &stack, l_number, n);
 	}
+	f_stack(&stack);
 	fclose(file);
 	return (0);
 }
-
