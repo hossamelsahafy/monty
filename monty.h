@@ -48,4 +48,5 @@ unsigned int l_number, int n);
 
 void pro_file(FILE *file, stack_t **stack);
 
+void pint(stack_t **stack, unsigned int l_number, int n);
 #endif
